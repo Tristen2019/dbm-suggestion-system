@@ -1,0 +1,47 @@
+{
+  "name": "setupsuggestions",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "_id": "WpWFP",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Creating necessary channels....",
+      "storage": "1",
+      "varName2": "creating.channels.message.delete.this",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "creating.channels.message.delete.this",
+      "name": "Delete Message"
+    },
+    {
+      "channelName": "suggestions",
+      "categoryID": "",
+      "topic": "This is where suggestions are displayed",
+      "position": "",
+      "storage": "0",
+      "varName": "",
+      "name": "Create Text Channel"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Necessary channels have been successfully created!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}

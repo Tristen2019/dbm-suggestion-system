@@ -1,0 +1,130 @@
+{
+  "name": "suggest",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "mPzIY",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "suggestion.text",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "command.author.username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "command.author.avatar.url",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "1",
+      "find": "suggestions",
+      "storage": "1",
+      "varName": "found.channel.suggestions",
+      "name": "Find Channel"
+    },
+    {
+      "title": "Suggestion",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "#32CD32",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "suggestion.embed.message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion.embed.message",
+      "message": "${tempVars(\"suggestion.text\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion.embed.message",
+      "channel": "5",
+      "varName2": "found.channel.suggestions",
+      "storage3": "1",
+      "varName3": "add.reaction.here.send.embed",
+      "name": "Send Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "add.reaction.here.send.embed",
+      "emoji": "4",
+      "varName2": "👍",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "add.reaction.here.send.embed",
+      "emoji": "4",
+      "varName2": "👎",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Suggestion made successfully. Please check the suggestions channel!",
+      "storage": "1",
+      "varName2": "suggestion.made.successfully.message",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "suggestion.made.successfully.message",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "In order to make a suggestion, please follow the instructions:\n.suggest (Your Suggestion)",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
